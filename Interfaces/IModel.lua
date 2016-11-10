@@ -2,34 +2,22 @@ local class = require 'middleclass.lua'
 
 IModel = class('IModel')
 
-function IModel:RegisterObserver(notificationName, observer)
+function IModel:RegisterProxy(proxy)
 	print("to implement in subclass")
 end
 
-function IModel:RemoveObserver(notificationName, notifyContext)
+function IModel:RetrieveProxy(proxyName)
 	print("to implement in subclass")
 end
 
-function IModel:NotifyObservers(notification)
+function IModel:RemoveProxy(proxyName)
 	print("to implement in subclass")
 end
 
-function IModel:RegisterMediator(mediator)
+function IModel:HasProxy(proxyName)
 	print("to implement in subclass")
 end
 
-function IModel:RetrieveMediator(mediatorName)
-	print("to implement in subclass")
-end
-
-function IModel:RemoveMediator(mediatorName)
-	print("to implement in subclass")
-end
-
-function IModel:HasMediator(mediatorName)
-	print("to implement in subclass")
-end
-
-function IModel:ListMediatorNames()
+function IModel:ListProxyNames()
 	print("to implement in subclass")
 end

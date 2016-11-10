@@ -32,7 +32,7 @@ end
 
 -- implement of IController
 
-function IController:RegisterCommand(notificationName, command)
+function Controller:RegisterCommand(notificationName, command)
 	if self.m_commandMap[notificationName] == nil then
 		self.m_view:RegisterObserver(notificationName, Observer:new("executeCommand", self))
 	end
@@ -41,28 +41,32 @@ function IController:RegisterCommand(notificationName, command)
 end
 
 function Controller:ExecuteCommand(notification)
-	if self.m_commandMap[notification.Name] == nil return
+	if self.m_commandMap[notification.Name] == nil then return end
     local command = self.m_commandMap[notification.Name]
     command:InitializeNotifier(self.m_multitonKey)
     command:Execute(notification)
 end
 
-function IController:RemoveCommand(notificationName)
-	if self.m_commandMap[notificationName] == nil return nil end
+function Controller:RemoveCommand(notificationName)
+	if self.m_commandMap[notificationName] == nil then return end
  	self.m_view:RemoveObserver(notificationName, self)
     local command = self.m_commandMap[notificationName]
    	self.m_commandMap[notificationName] = nil
     return command
 end
 
-function IController:HasCommand(notificationName)
+function Controller:HasCommand(notificationName)
 	return self.m_commandMap[notificationName] ~= nil
 end
 
-function IController:ListNotificationNames()
+function Controller:ListNotificationNames()
 	local keys = {}
 	for k, v in pairs(self.m_commandMap) do
 		table.insert(keys, k)
 	end
 	return keys
+end
+
+function Controller.RemoveController(key)
+	Controller.m_instanceMap[key] = nil
 end

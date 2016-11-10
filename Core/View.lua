@@ -76,7 +76,7 @@ function View:RetrieveMediator(mediatorName)
 end
 
 function View:RemoveMediator(mediatorName)
-	if self.m_mediatorMap[mediatorName] == nil then return nil end
+	if self.m_mediatorMap[mediatorName] == nil then return end
     local mediator = self.m_mediatorMap[mediatorName]
     local interests = mediator:ListNotificationInterests()
     for _, v in pairs(interests) do
@@ -97,4 +97,8 @@ function View:ListMediatorNames()
 		table.insert(keys, k)
 	end
 	return keys
+end
+
+function View.RemoveView(key)
+	View.m_instanceMap[key] = nil
 end
