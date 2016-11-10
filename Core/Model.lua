@@ -1,4 +1,4 @@
-
+local class = require 'middleclass.lua'
 
 Model = class('Model', IModel) 
 

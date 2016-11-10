@@ -1,4 +1,4 @@
-
+local class = require 'middleclass.lua'
 
 View = class('View', IView) 
 
