@@ -1,8 +1,8 @@
-local IFacade = require 'Interfaces/IFacade.lua'
-local Controller = require 'Core/Controller.lua'
-local Model = require 'Core/Model.lua'
-local View = require 'Core/View.lua'
-local class = require 'middleclass.lua'
+require 'puremvc/interfaces/IFacade'
+--require 'puremvc/core/Controller'
+require 'puremvc/core/Model'
+require 'puremvc/core/View'
+local class = require 'middleclass'
 
 Facade = class('Facade', IFacade) 
 

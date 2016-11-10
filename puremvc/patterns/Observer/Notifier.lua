@@ -1,5 +1,5 @@
-local class = require 'middleclass.lua'
-local Facade = require 'Patterns/Facade/Facade.lua'
+local class = require 'middleclass'
+require 'puremvc/patterns/Facade/Facade'
 
 Notifier = class('Notifier')
 

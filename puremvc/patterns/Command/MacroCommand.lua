@@ -1,5 +1,5 @@
-local class = require 'middleclass.lua'
-local Notifier = require 'Patterns/Observer/Notifier.lua'
+local class = require 'middleclass'
+require 'puremvc/patterns/Observer/Notifier'
 
 MacroCommand = class('MacroCommand', Notifier)
 

@@ -1,8 +1,8 @@
-local class = require 'middleclass.lua'
-local Facade = require 'Patterns/Facade/Facade.lua'
-local IObserver = require 'Interfaces/IObserver.lua'
+local class = require 'middleclass'
+require 'puremvc/patterns/Facade/Facade'
+--local IObserver = require 'puremvc/interfaces/IObserver'
 
-Observer = class('Observer', IObserver)
+Observer = class('Observer')
 
 Observer.static.MULTITON_MSG = "multitonKey for this Observer not yet initialized!";
 

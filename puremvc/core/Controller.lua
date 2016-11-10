@@ -1,7 +1,8 @@
-local IController = require 'Interfaces/IController.lua'
-local Observer = require 'Patterns/Observer/Observer.lua'
-local View = require 'View.lua'
-local class = require 'middleclass.lua'
+require 'puremvc/interfaces/IController'
+require 'puremvc/patterns/Observer/Observer'
+require 'puremvc/core/View'
+
+local class = require 'middleclass'
 
 Controller = class('Controller', IController) 
 
