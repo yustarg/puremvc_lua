@@ -52,8 +52,8 @@ function View:RemoveObserver(notificationName, notifyContext)
 end
 
 function View:NotifyObservers(notification)
-	if self.m_observerMap[notification.Name] ~= nil then 	
-		for _, observer in pairs(self.m_observerMap[notification.Name]) do
+	if self.m_observerMap[notification:GetName()] ~= nil then 	
+		for _, observer in pairs(self.m_observerMap[notification:GetName()]) do
 		    observer:NotifyObserver(notification)
 		end
 	end

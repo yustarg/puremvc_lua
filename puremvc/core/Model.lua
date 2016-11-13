@@ -30,7 +30,7 @@ end
 -- implement of IModel
 function Model:RegisterProxy(proxy)
     proxy:InitializeNotifier(self.m_multitonKey)
-    self.m_proxyMap[proxy.ProxyName] = proxy
+    self.m_proxyMap[proxy:GetProxyName()] = proxy
     proxy:OnRegister()
 end
 
@@ -41,6 +41,7 @@ end
 function Model:RemoveProxy(proxyName)
 	if self.m_proxyMap[proxyName] == nil then return end
     local proxy = self.m_proxyMap[proxyName]
+    self.m_proxyMap[proxyName] = nil
     proxy:OnRemove()
     return proxy
 end

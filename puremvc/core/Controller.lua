@@ -35,15 +35,15 @@ end
 
 function Controller:RegisterCommand(notificationName, command)
 	if self.m_commandMap[notificationName] == nil then
-		self.m_view:RegisterObserver(notificationName, Observer:new("executeCommand", self))
+		self.m_view:RegisterObserver(notificationName, Observer:new(self.ExecuteCommand, self))
 	end
 	command:InitializeNotifier(self.m_multitonKey)
-    self.m_commandMap[notificationName] = command
+  self.m_commandMap[notificationName] = command
 end
 
 function Controller:ExecuteCommand(notification)
-	if self.m_commandMap[notification.Name] == nil then return end
-    local command = self.m_commandMap[notification.Name]
+	if self.m_commandMap[notification:GetName()] == nil then return end
+    local command = self.m_commandMap[notification:GetName()]
     command:InitializeNotifier(self.m_multitonKey)
     command:Execute(notification)
 end

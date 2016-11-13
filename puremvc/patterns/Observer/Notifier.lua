@@ -1,5 +1,5 @@
-local class = require 'middleclass'
 require 'puremvc/patterns/Facade/Facade'
+local class = require 'middleclass'
 
 Notifier = class('Notifier')
 
