@@ -2,8 +2,6 @@ require "puremvc/core/Model"
 require "puremvc/core/View"
 require "puremvc/patterns/Proxy/Proxy"
 require "test/core/ModelTestProxy"
-require "test/core/ControllerTestCommand2"
-require "test/core/ControllerTestVO"
 require "test/passert"
 
 local TestCase = {}

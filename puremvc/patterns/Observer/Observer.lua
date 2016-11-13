@@ -28,7 +28,7 @@ function Observer:GetNotifyContext()
 end
 
 function Observer:NotifyObserver(notification)
-	self.notifyMethod(self.notifyContext, notification)
+  self.notifyMethod(notification)
 end
 
 function Observer:CompareNotifyContext(object)
