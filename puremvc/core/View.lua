@@ -65,10 +65,10 @@ function View:RegisterMediator(mediator)
     mediator:InitializeNotifier(self.m_multitonKey)
     self.m_mediatorMap[mediator:GetMediatorName()] = mediator
     local interests = mediator:ListNotificationInterests()
-    local observer = Observer:new("handleNotification", mediator)
+    local observer = Observer:new(mediator.HandleNotification, mediator)
     for _, v in pairs(interests) do
         self:RegisterObserver(v, observer)
-	end
+    end
     mediator:OnRegister()
 end
 

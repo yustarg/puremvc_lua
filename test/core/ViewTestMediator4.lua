@@ -1,7 +1,7 @@
 require "puremvc/patterns/Mediator/Mediator"
 local class = require 'middleclass'
 
-ViewTestMediator4 = class("ViewTestMediator", Mediator)
+ViewTestMediator4 = class("ViewTestMediator4", Mediator)
 
 ViewTestMediator4.static.NAME = "ViewTestMediator4"
 		

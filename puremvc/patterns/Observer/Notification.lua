@@ -28,7 +28,7 @@ function Notification:GetType()
 	return self.type
 end
 
-function Notification:ToString()
+function Notification:__tostring()
 	local msg = "Notification Name: " .. self:GetName()
 	msg = msg .. "\nBody: " .. tostring(self:GetBody())
 	msg = msg .. "\nType: " .. self:GetType()

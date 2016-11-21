@@ -1,6 +1,5 @@
 local class = require 'middleclass'
 require 'puremvc/patterns/Facade/Facade'
---local IObserver = require 'puremvc/interfaces/IObserver'
 
 Observer = class('Observer')
 
@@ -28,7 +27,8 @@ function Observer:GetNotifyContext()
 end
 
 function Observer:NotifyObserver(notification)
-  self.notifyMethod(notification)
+--  print("Observer:NotifyObserver : " .. notification)
+  self.notifyMethod(self.notifyContext, notification)
 end
 
 function Observer:CompareNotifyContext(object)

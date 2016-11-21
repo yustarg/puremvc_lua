@@ -1,5 +1,4 @@
 require 'puremvc/interfaces/IFacade'
---require 'puremvc/core/Controller'
 require 'puremvc/core/Model'
 require 'puremvc/core/View'
 local class = require 'middleclass'
