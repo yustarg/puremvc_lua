@@ -1,5 +1,4 @@
 local class = require 'middleclass'
-require 'puremvc/patterns/Facade/Facade'
 
 Observer = class('Observer')
 
@@ -27,7 +26,6 @@ function Observer:GetNotifyContext()
 end
 
 function Observer:NotifyObserver(notification)
---  print("Observer:NotifyObserver : " .. notification)
   self.notifyMethod(self.notifyContext, notification)
 end
 

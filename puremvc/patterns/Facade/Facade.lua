@@ -1,6 +1,8 @@
 require 'puremvc/interfaces/IFacade'
 require 'puremvc/core/Model'
 require 'puremvc/core/View'
+require 'puremvc/core/Controller'
+
 local class = require 'middleclass'
 
 Facade = class('Facade', IFacade) 
@@ -22,7 +24,7 @@ function Facade:InitializeNotifier(key)
 end
 
 function Facade:InitializeFacade()
-	self:InitializeModel()
+    self:InitializeModel()
     self:InitializeController()
     self:InitializeView()
 end
@@ -38,8 +40,8 @@ function Facade:InitializeController()
 end
 
 function Facade:InitializeView()
-	if self.m_model ~= nil then return end
-    self.m_model = View.GetInstance(self.m_multitonKey)
+	if self.m_view ~= nil then return end
+    self.m_view = View.GetInstance(self.m_multitonKey)
 end
 
 function Facade.GetInstance(key)

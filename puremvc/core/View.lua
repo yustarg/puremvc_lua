@@ -34,6 +34,11 @@ function View:RegisterObserver(notificationName, observer)
        self.m_observerMap[notificationName] = {}
     end
     table.insert(self.m_observerMap[notificationName], observer) 
+	print("------" .. observer:GetNotifyContext():GetMediatorName())
+	
+	for i, v in ipairs(self.m_observerMap[notificationName]) do
+		print(v:GetNotifyContext():GetMediatorName())
+	end
 end
 
 function View:RemoveObserver(notificationName, notifyContext)
@@ -52,10 +57,11 @@ function View:RemoveObserver(notificationName, notifyContext)
 end
 
 function View:NotifyObservers(notification)
-  if self.m_observerMap[notification:GetName()] ~= nil then 	
-		for _, observer in pairs(self.m_observerMap[notification:GetName()]) do
-		    --print("View:NotifyObservers " .. notification:GetName())
-        observer:NotifyObserver(notification)
+	if self.m_observerMap[notification:GetName()] ~= nil then
+		local observers_ref = self.m_observerMap[notification:GetName()]
+		for _, observer in pairs(observers_ref) do
+			--print("View:NotifyObservers " .. observer:GetNotifyContext():GetMediatorName())
+			observer:NotifyObserver(notification)
 		end
 	end
 end

@@ -6,6 +6,7 @@ ViewTestMediator6 = class("ViewTestMediator6", Mediator)
 ViewTestMediator6.static.NAME = "ViewTestMediator6"
 		
 function ViewTestMediator6:initialize(name, view) 
+    --print("ViewTestMediator6:initialize " .. name)
     Mediator:initialize(name, view)
 end
 
@@ -14,9 +15,10 @@ function ViewTestMediator6:ListNotificationInterests()
 end
 
 function ViewTestMediator6:HandleNotification(notification)
-    Facade:RemoveMediator(Mediator:GetMediatorName())
+    --print("ViewTestMediator6:HandleNotification " .. self:GetMediatorName())
+    self:GetFacade():RemoveMediator(Mediator:GetMediatorName())
 end
 
 function ViewTestMediator6:OnRemove()
-	Mediator:GetViewComponent().counter = Mediator:GetViewComponent().counter + 1
+    self:GetViewComponent().counter = self:GetViewComponent().counter + 1
 end
