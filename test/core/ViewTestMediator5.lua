@@ -6,7 +6,7 @@ ViewTestMediator5 = class("ViewTestMediator5", Mediator)
 ViewTestMediator5.static.NAME = "ViewTestMediator5"
 		
 function ViewTestMediator5:initialize(view) 
-    Mediator:initialize(ViewTestMediator5.NAME, view)
+    Mediator.initialize(self, ViewTestMediator5.NAME, view)
 end
 
 function ViewTestMediator5:ListNotificationInterests()
@@ -14,5 +14,5 @@ function ViewTestMediator5:ListNotificationInterests()
 end
 
 function ViewTestMediator5:HandleNotification(notification)
-    Mediator:GetViewComponent().counter = Mediator:GetViewComponent().counter + 1
+    self:GetViewComponent().counter = self:GetViewComponent().counter + 1
 end

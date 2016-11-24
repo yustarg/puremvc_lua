@@ -6,7 +6,7 @@ ViewTestMediator4 = class("ViewTestMediator4", Mediator)
 ViewTestMediator4.static.NAME = "ViewTestMediator4"
 		
 function ViewTestMediator4:initialize(name, view) 
-    Mediator:initialize(ViewTestMediator4.NAME, view)
+    Mediator.initialize(self, ViewTestMediator4.NAME, view)
 end
 
 function ViewTestMediator4:OnRegister()

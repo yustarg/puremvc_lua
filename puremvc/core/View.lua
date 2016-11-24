@@ -30,15 +30,10 @@ end
 
 -- implement of IView
 function View:RegisterObserver(notificationName, observer)
-	if self.m_observerMap[notificationName] == nil then
+    if self.m_observerMap[notificationName] == nil then
        self.m_observerMap[notificationName] = {}
     end
     table.insert(self.m_observerMap[notificationName], observer) 
-	print("------" .. observer:GetNotifyContext():GetMediatorName())
-	
-	for i, v in ipairs(self.m_observerMap[notificationName]) do
-		print(v:GetNotifyContext():GetMediatorName())
-	end
 end
 
 function View:RemoveObserver(notificationName, notifyContext)
@@ -59,9 +54,9 @@ end
 function View:NotifyObservers(notification)
 	if self.m_observerMap[notification:GetName()] ~= nil then
 		local observers_ref = self.m_observerMap[notification:GetName()]
-		for _, observer in pairs(observers_ref) do
+		for i = #observers_ref, 1, -1 do
 			--print("View:NotifyObservers " .. observer:GetNotifyContext():GetMediatorName())
-			observer:NotifyObserver(notification)
+			observers_ref[i]:NotifyObserver(notification)
 		end
 	end
 end
