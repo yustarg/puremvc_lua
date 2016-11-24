@@ -14,5 +14,5 @@ function ViewTestMediator5:ListNotificationInterests()
 end
 
 function ViewTestMediator5:HandleNotification(notification)
-    Mediator:GetViewComponent().counter = Mediator:GetViewComponent().counter + 1
+    self:GetViewComponent().counter = self:GetViewComponent().counter + 1
 end

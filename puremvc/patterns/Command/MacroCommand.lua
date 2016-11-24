@@ -1,10 +1,11 @@
-local class = require 'middleclass'
 require 'puremvc/patterns/Observer/Notifier'
+local class = require 'middleclass'
 
 MacroCommand = class('MacroCommand', Notifier)
 
 function MacroCommand:initialize()
-	self.m_subCommands = {}
+    Notifier.initialize(self)
+    self.m_subCommands = {}
     self:InitializeMacroCommand()
 end
 
@@ -14,8 +15,8 @@ end
 
 function MacroCommand:Execute(notification)
 	while(#self.m_subCommands > 0) do
-        local ref = table.remove(self.m_subCommands, 1)
-        local cmd = ref:new()
+        local cmd = table.remove(self.m_subCommands, 1)
+        --local cmd = ref:new()
         cmd:InitializeNotifier(self.m_multitonKey)
         cmd:Execute(notification)
     end

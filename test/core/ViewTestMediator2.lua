@@ -16,5 +16,5 @@ end
 function ViewTestMediator2:HandleNotification(notification)
     print("ViewTestMediator2:HandleNotification " .. notification:GetName())
     Mediator:HandleNotification(notification)
-    Mediator:GetViewComponent().lastNotification = notification:GetName()
+    self:GetViewComponent().lastNotification = notification:GetName()
 end

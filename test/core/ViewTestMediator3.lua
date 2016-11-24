@@ -14,5 +14,5 @@ function ViewTestMediator3:ListNotificationInterests()
 end
 
 function ViewTestMediator3:HandleNotification(notification)
-    Mediator:GetViewComponent().lastNotification = notification:GetName()
+    self:GetViewComponent().lastNotification = notification:GetName()
 end
