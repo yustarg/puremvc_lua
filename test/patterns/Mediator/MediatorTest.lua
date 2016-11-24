@@ -7,7 +7,7 @@ TestCase["NameAccessor"] = function()
   -- Create a new Mediator and use accessors to set the mediator name 
   local mediator = Mediator:new("TestMediator")
   -- test assertions	
-  passert.equal("Expecting mediator.MediatorName == 'TestMediator'", mediator:GetMediatorName(0) == "TestMediator", true)
+  passert.equal("Expecting mediator.MediatorName == 'TestMediator'", mediator:GetMediatorName() == "TestMediator", true)
 end
 
 TestCase["ViewAccessor"] = function()
