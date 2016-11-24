@@ -6,7 +6,7 @@ ViewTestMediator5 = class("ViewTestMediator5", Mediator)
 ViewTestMediator5.static.NAME = "ViewTestMediator5"
 		
 function ViewTestMediator5:initialize(view) 
-    Mediator:initialize(ViewTestMediator5.NAME, view)
+    Mediator.initialize(self, ViewTestMediator5.NAME, view)
 end
 
 function ViewTestMediator5:ListNotificationInterests()
