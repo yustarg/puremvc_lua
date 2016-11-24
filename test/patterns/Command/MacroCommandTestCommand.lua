@@ -1,6 +1,6 @@
 require "puremvc/patterns/Command/MacroCommand"
-require "test/patterns/MacroCommandTestSub1Command"
-require "test/patterns/MacroCommandTestSub2Command"
+require "test/patterns/Command/MacroCommandTestSub1Command"
+require "test/patterns/Command/MacroCommandTestSub2Command"
 
 local class = require 'middleclass'
 

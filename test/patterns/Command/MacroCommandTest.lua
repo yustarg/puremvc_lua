@@ -1,6 +1,6 @@
 require "puremvc/patterns/Observer/Notification"
-require "test/patterns/MacroCommandTestVO"
-require "test/patterns/MacroCommandTestCommand"
+require "test/patterns/Command/MacroCommandTestVO"
+require "test/patterns/Command/MacroCommandTestCommand"
 require "test/passert"
 
 local TestCase = {}
