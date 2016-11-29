@@ -10,6 +10,6 @@ end
 
 function SimpleCommandTestCommand:Execute(note)
 	SimpleCommand.Execute(self)
-  local vo = note:GetBody()
-  vo.result = 2 * vo.input
+  	local vo = note:GetBody()
+  	vo.result = 2 * vo.input
 end

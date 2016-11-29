@@ -38,7 +38,7 @@ function Controller:RegisterCommand(notificationName, command)
 		self.m_view:RegisterObserver(notificationName, Observer:new(self.ExecuteCommand, self))
 	end
 	command:InitializeNotifier(self.m_multitonKey)
-  self.m_commandMap[notificationName] = command
+  	self.m_commandMap[notificationName] = command
 end
 
 function Controller:ExecuteCommand(notification)
