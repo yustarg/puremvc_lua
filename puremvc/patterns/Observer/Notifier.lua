@@ -22,5 +22,5 @@ function Notifier:GetFacade()
 	if self.m_multitonKey == nil then
 		error(Notifier.MULTITON_MSG)
 	end
-	return Facade.GetInstance(self.m_multitonKey)
+	return Facade:GetInstance(self.m_multitonKey)
 end

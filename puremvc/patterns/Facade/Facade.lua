@@ -2,6 +2,7 @@ require 'puremvc/interfaces/IFacade'
 require 'puremvc/core/Model'
 require 'puremvc/core/View'
 require 'puremvc/core/Controller'
+require 'puremvc/patterns/Observer/Notification'
 
 local class = require 'middleclass'
 
@@ -44,11 +45,11 @@ function Facade:InitializeView()
     self.m_view = View.GetInstance(self.m_multitonKey)
 end
 
-function Facade.GetInstance(key)
+function Facade.GetInstance(subfacade, key)
 	if Facade.m_instanceMap[key] ~= nil then
 		return Facade.m_instanceMap[key]
 	end
-	Facade.m_instanceMap[key] = Facade:new(key)
+	Facade.m_instanceMap[key] = subfacade:new(key)
 	return Facade.m_instanceMap[key]
 end
 

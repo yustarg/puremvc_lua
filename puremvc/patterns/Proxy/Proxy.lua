@@ -6,6 +6,7 @@ Proxy = class('Proxy', Notifier)
 Proxy.static.NAME = "Proxy"
 
 function Proxy:initialize(proxyName, data)
+	Notifier.initialize(self)
 	self.m_proxyName = proxyName
 	self.data = data
 end
